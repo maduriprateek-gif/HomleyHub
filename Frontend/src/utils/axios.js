@@ -1,10 +1,8 @@
-//centeralized API setup
-
 import axios from "axios";
 import qs from "qs";
 
 export const axiosInstance = axios.create({
-    baseURL: "/api/v1/rent",
+    baseURL: import.meta.env.VITE_API_BASE_URL,
     withCredentials: true,
     paramsSerializer: params =>
         qs.stringify(params, { arrayFormat: "repeat" }),
